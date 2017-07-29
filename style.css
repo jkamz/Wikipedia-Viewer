@@ -1,0 +1,97 @@
+body {
+	background-color: #a8a8a8;
+}
+
+img	{
+	width: 60px;
+	height: 60px;
+}
+
+h1	{
+	font-family: 'Fredoka One', serif;
+}
+
+h3	{
+	font-family: 'Bellefair', serif;
+
+}
+
+h4 {
+	text-decoration: none;
+}
+
+.output {
+	margin-top: 30px;
+	font-family: 'Karma', serif;
+}
+
+
+button {
+  font-family: 'Roboto Mono', serif;	
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 2px 30px;
+  padding-top: 4px;
+  border-radius: 2px;
+  font-size: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+  background: grey;
+}
+
+/* Ripple magic */
+
+button{
+
+  	position: relative;
+  	overflow: hidden;
+}
+
+button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+.img-zoom {
+    width: 60px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+ 
+.transition {
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
